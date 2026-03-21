@@ -19,7 +19,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename="/life-coaching-template">
         <Layout>
           <Routes>
             <Route path="/" element={<HomePage />} />
