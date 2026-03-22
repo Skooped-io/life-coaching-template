@@ -2,21 +2,15 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Sparkles, Play } from "lucide-react";
-
-const testimonials = [
-  { quote: "Elena completely changed my trajectory. I went from dreading Monday mornings to running a business I'm passionate about.", name: "Sarah Mitchell", title: "Founder, Bloom Creative", result: "Left corporate & launched her dream business" },
-  { quote: "I was skeptical about coaching, but within three months I had more clarity about my career than I'd gained in ten years.", name: "Marcus Chen", title: "VP of Engineering, TechScale", result: "Promoted twice in 18 months" },
-  { quote: "Working with Elena gave me the confidence to charge what I'm worth and set boundaries that transformed not just my business, but my relationships.", name: "Priya Desai", title: "Executive Coach & Consultant", result: "Doubled her income in one year" },
-  { quote: "I came to Elena feeling completely burnt out. Six months later, I'm running my team with more energy than I've had in years and my health is back on track.", name: "James Walker", title: "Director of Operations, Meridian Group", result: "Overcame burnout, got promoted" },
-  { quote: "The group coaching program was exactly what I needed. The community support combined with Elena's expertise created real momentum.", name: "Aisha Okonkwo", title: "Freelance Designer", result: "Tripled her client base" },
-  { quote: "Elena helped me find the courage to leave a 15-year career and start something truly aligned with my values. Best decision I ever made.", name: "David Rousseau", title: "Founder, GreenPath Consulting", result: "Successful career pivot at 42" },
-];
+import { siteConfig } from "@/lib/config";
+import SeoHead from "@/components/SeoHead";
 
 export default function TestimonialsPage() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
     <>
+      <SeoHead page="testimonials" />
       <section className="py-24 gradient-hero text-white">
         <div className="container text-center">
           <h1 className="text-4xl md:text-5xl font-heading font-extrabold mb-4 text-balance">
@@ -31,7 +25,7 @@ export default function TestimonialsPage() {
       <section ref={ref} className="py-24 bg-background">
         <div className="container">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {testimonials.map((t, i) => (
+            {siteConfig.testimonials.map((t, i) => (
               <div
                 key={i}
                 className={`bg-card rounded-2xl p-8 border border-border/50 shadow-lg shadow-black/5 flex flex-col ${
@@ -68,13 +62,13 @@ export default function TestimonialsPage() {
         <div className="container text-center">
           <h2 className="text-3xl font-heading font-bold mb-12">Video <span className="text-primary">Testimonials</span></h2>
           <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            {["Sarah's Story", "Marcus's Journey", "Priya's Transformation"].map((title, i) => (
+            {siteConfig.testimonials.slice(0, 3).map((t, i) => (
               <div key={i} className="bg-secondary/80 rounded-2xl aspect-video flex items-center justify-center cursor-pointer group hover:bg-secondary transition-colors">
                 <div className="text-center">
                   <div className="w-14 h-14 rounded-full bg-primary/80 flex items-center justify-center mx-auto mb-3 group-hover:bg-primary transition-colors">
                     <Play className="text-white ml-1" size={24} />
                   </div>
-                  <span className="text-white/80 text-sm font-medium">{title}</span>
+                  <span className="text-white/80 text-sm font-medium">{t.name}'s Story</span>
                 </div>
               </div>
             ))}

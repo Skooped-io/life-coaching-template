@@ -2,6 +2,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
+import { siteConfig } from "@/lib/config";
 
 const navLinks = [
   { label: "Home", to: "/" },
@@ -15,12 +16,13 @@ const navLinks = [
 export default function Header() {
   const [open, setOpen] = useState(false);
   const location = useLocation();
+  const nameParts = siteConfig.businessName.split(" ");
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-card/80 backdrop-blur-lg border-b border-border/50">
       <div className="container flex items-center justify-between h-16">
         <Link to="/" className="font-heading text-xl font-bold tracking-tight text-foreground">
-          Elena <span className="text-primary">Torres</span>
+          {nameParts[0]} <span className="text-primary">{nameParts.slice(1).join(" ")}</span>
         </Link>
 
         {/* Desktop */}

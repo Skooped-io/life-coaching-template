@@ -2,15 +2,18 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Play, ArrowRight, Sparkles, Users, Award, Calendar } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import { siteConfig, getImage } from "@/lib/config";
 import coachPortrait from "@/assets/coach-portrait.jpg";
 import coachStage from "@/assets/coach-stage.jpg";
 import coachingSession from "@/assets/coaching-session.jpg";
+import SeoHead from "@/components/SeoHead";
+
+const statIcons = [Users, Calendar, Award, Sparkles];
 
 // ─── Hero ───────────────────────────────────────────────
 function Hero() {
   return (
     <section className="gradient-hero relative overflow-hidden min-h-[90vh] flex items-center">
-      {/* Floating shapes */}
       <div className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-float" />
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-float" style={{ animationDelay: "2.5s" }} />
       
@@ -18,11 +21,17 @@ function Hero() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="text-white">
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-sm text-sm font-medium text-accent mb-6">
-              <Sparkles size={14} /> ICF Certified Life & Executive Coach
+              <Sparkles size={14} /> ICF Certified {siteConfig.tagline}
             </span>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-heading font-extrabold leading-[1.05] text-balance mb-6">
-              Transform Your Life,{" "}
-              <span className="text-accent">Starting Today.</span>
+              {siteConfig.seo.home.h1.includes(",") ? (
+                <>
+                  {siteConfig.seo.home.h1.split(",")[0]},{" "}
+                  <span className="text-accent">{siteConfig.seo.home.h1.split(",").slice(1).join(",").trim()}</span>
+                </>
+              ) : (
+                siteConfig.seo.home.h1
+              )}
             </h1>
             <p className="text-lg text-white/75 max-w-lg text-pretty leading-relaxed mb-8">
               Unlock your full potential and create the life you've been dreaming about. 
@@ -43,7 +52,12 @@ function Hero() {
 
           <div className="relative hidden lg:block">
             <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl shadow-black/30">
-              <img src={coachPortrait} alt="Elena Torres — Life & Executive Coach" className="w-full h-auto object-cover" />
+              <img
+                src={getImage(null, 'hero', coachPortrait)}
+                alt={`${siteConfig.businessName} — ${siteConfig.tagline}`}
+                className="w-full h-auto object-cover"
+                data-image-slot="hero"
+              />
             </div>
             <div className="absolute -bottom-6 -left-6 w-48 h-48 bg-accent/20 rounded-2xl -z-0" />
             <div className="absolute -top-6 -right-6 w-32 h-32 bg-primary/30 rounded-2xl -z-0" />
@@ -57,12 +71,6 @@ function Hero() {
 // ─── Credibility Bar ────────────────────────────────────
 function CredibilityBar() {
   const { ref, isVisible } = useScrollReveal();
-  const stats = [
-    { icon: Users, value: "500+", label: "Clients Transformed" },
-    { icon: Calendar, value: "12", label: "Years Coaching" },
-    { icon: Award, value: "ICF PCC", label: "Certified Coach" },
-    { icon: Sparkles, value: "98%", label: "Client Satisfaction" },
-  ];
 
   return (
     <section ref={ref} className="relative -mt-12 z-20">
@@ -72,13 +80,16 @@ function CredibilityBar() {
             isVisible ? "animate-reveal-up" : "opacity-0"
           }`}
         >
-          {stats.map((s, i) => (
-            <div key={i} className="text-center" style={{ animationDelay: `${i * 80}ms` }}>
-              <s.icon className="mx-auto mb-2 text-primary" size={28} />
-              <div className="text-2xl md:text-3xl font-heading font-extrabold text-foreground tabular-nums">{s.value}</div>
-              <div className="text-sm text-muted-foreground">{s.label}</div>
-            </div>
-          ))}
+          {siteConfig.stats.map((s, i) => {
+            const Icon = statIcons[i] || Sparkles;
+            return (
+              <div key={i} className="text-center" style={{ animationDelay: `${i * 80}ms` }}>
+                <Icon className="mx-auto mb-2 text-primary" size={28} />
+                <div className="text-2xl md:text-3xl font-heading font-extrabold text-foreground tabular-nums">{s.value}</div>
+                <div className="text-sm text-muted-foreground">{s.label}</div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
@@ -88,23 +99,6 @@ function CredibilityBar() {
 // ─── Who I Help ─────────────────────────────────────────
 function WhoIHelp() {
   const { ref, isVisible } = useScrollReveal();
-  const personas = [
-    {
-      title: "Professionals Feeling Stuck",
-      desc: "You've achieved success on paper, but something feels off. You're craving purpose, direction, and that spark you once had.",
-      cta: "That's Me",
-    },
-    {
-      title: "Entrepreneurs Scaling Up",
-      desc: "You're building something meaningful but overwhelmed by decisions. You need clarity, strategy, and someone who gets it.",
-      cta: "That's Me",
-    },
-    {
-      title: "Anyone Ready for Change",
-      desc: "You know there's more to life. You're done waiting and ready to take bold action toward the version of yourself you know you can be.",
-      cta: "That's Me",
-    },
-  ];
 
   return (
     <section ref={ref} className="py-24 bg-background">
@@ -119,7 +113,7 @@ function WhoIHelp() {
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {personas.map((p, i) => (
+          {siteConfig.personas.map((p, i) => (
             <div
               key={i}
               className={`group bg-card rounded-2xl p-8 shadow-lg shadow-black/5 hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 border border-border/50 hover:border-primary/20 ${
@@ -146,12 +140,6 @@ function WhoIHelp() {
 // ─── Transformation ─────────────────────────────────────
 function Transformation() {
   const { ref, isVisible } = useScrollReveal();
-  const items = [
-    { from: "Overwhelmed", to: "Focused & Clear" },
-    { from: "Stuck in Place", to: "Moving Forward" },
-    { from: "Self-Doubt", to: "Unshakeable Confidence" },
-    { from: "Burnt Out", to: "Energized & Aligned" },
-  ];
 
   return (
     <section ref={ref} className="py-28 gradient-cta diagonal-both text-white">
@@ -166,7 +154,7 @@ function Transformation() {
         </div>
 
         <div className="grid sm:grid-cols-2 gap-6 max-w-3xl mx-auto">
-          {items.map((item, i) => (
+          {siteConfig.transformations.map((item, i) => (
             <div
               key={i}
               className={`flex items-center gap-4 bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 ${
@@ -192,29 +180,6 @@ function Transformation() {
 // ─── Programs ───────────────────────────────────────────
 function Programs() {
   const { ref, isVisible } = useScrollReveal();
-  const tiers = [
-    {
-      name: "1-on-1 Coaching",
-      price: "$297/mo",
-      duration: "3–6 month commitment",
-      features: ["Weekly 60-min sessions", "Unlimited voice/text support", "Personalized action plans", "Accountability tracking"],
-      highlight: false,
-    },
-    {
-      name: "VIP Intensive",
-      price: "$2,500",
-      duration: "Full-day deep dive",
-      features: ["8-hour intensive session", "90-day action roadmap", "2 follow-up calls", "Priority access forever"],
-      highlight: true,
-    },
-    {
-      name: "Group Program",
-      price: "$149/mo",
-      duration: "12-week cohort",
-      features: ["Weekly group sessions", "Private community access", "Peer accountability", "Recorded workshops"],
-      highlight: false,
-    },
-  ];
 
   return (
     <section ref={ref} className="py-24 bg-background">
@@ -229,7 +194,7 @@ function Programs() {
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          {tiers.map((tier, i) => (
+          {siteConfig.services.map((tier, i) => (
             <div
               key={i}
               className={`relative rounded-2xl p-8 border transition-all duration-300 ${
@@ -245,10 +210,10 @@ function Programs() {
                 </div>
               )}
               <h3 className="text-xl font-heading font-bold mb-2">{tier.name}</h3>
-              <div className="text-3xl font-heading font-extrabold text-primary mb-1">{tier.price}</div>
+              <div className="text-3xl font-heading font-extrabold text-primary mb-1">{tier.priceShort}</div>
               <p className="text-sm text-muted-foreground mb-6">{tier.duration}</p>
               <ul className="space-y-3 mb-8">
-                {tier.features.map((f, fi) => (
+                {tier.includes.map((f, fi) => (
                   <li key={fi} className="flex items-center gap-2 text-sm">
                     <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
                       <Sparkles size={12} className="text-primary" />
@@ -273,26 +238,7 @@ function Programs() {
 // ─── Testimonials ───────────────────────────────────────
 function Testimonials() {
   const { ref, isVisible } = useScrollReveal();
-  const testimonials = [
-    {
-      quote: "Elena completely changed my trajectory. I went from dreading Monday mornings to running a business I'm passionate about. Her ability to see your potential when you can't is a gift.",
-      name: "Sarah Mitchell",
-      title: "Founder, Bloom Creative",
-      result: "Left corporate & launched her dream business",
-    },
-    {
-      quote: "I was skeptical about coaching, but within three months I had more clarity about my career than I'd gained in ten years. The investment paid for itself tenfold.",
-      name: "Marcus Chen",
-      title: "VP of Engineering, TechScale",
-      result: "Promoted twice in 18 months",
-    },
-    {
-      quote: "Working with Elena gave me the confidence to charge what I'm worth and set boundaries that transformed not just my business, but my relationships and health too.",
-      name: "Priya Desai",
-      title: "Executive Coach & Consultant",
-      result: "Doubled her income in one year",
-    },
-  ];
+  const homeTestimonials = siteConfig.testimonials.slice(0, 3);
 
   return (
     <section ref={ref} className="py-24 bg-card">
@@ -304,7 +250,7 @@ function Testimonials() {
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {testimonials.map((t, i) => (
+          {homeTestimonials.map((t, i) => (
             <div
               key={i}
               className={`bg-background rounded-2xl p-8 border border-border/50 shadow-lg shadow-black/5 ${
@@ -355,10 +301,10 @@ function FreeResource() {
             <Sparkles size={12} className="text-accent" /> FREE GUIDE
           </span>
           <h2 className="text-2xl md:text-3xl font-heading font-bold mb-3 text-balance">
-            5 Steps to Breakthrough Clarity
+            {siteConfig.freeResource.title}
           </h2>
           <p className="text-muted-foreground mb-8 max-w-md mx-auto text-pretty">
-            Get the exact framework I use with my private clients to cut through confusion and create unstoppable momentum.
+            {siteConfig.freeResource.desc}
           </p>
           <form className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" onSubmit={(e) => e.preventDefault()}>
             <input
@@ -406,6 +352,7 @@ function FinalCTA() {
 export default function HomePage() {
   return (
     <>
+      <SeoHead page="home" />
       <Hero />
       <CredibilityBar />
       <WhoIHelp />

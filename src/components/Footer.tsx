@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { Instagram, Linkedin, Youtube, Mail } from "lucide-react";
+import { siteConfig } from "@/lib/config";
 
 export default function Footer() {
   return (
@@ -8,11 +9,11 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-12">
           <div className="md:col-span-2">
             <h3 className="font-heading text-2xl font-bold mb-4">
-              Elena <span className="text-accent">Torres</span>
+              {siteConfig.businessName.split(" ")[0]} <span className="text-accent">{siteConfig.businessName.split(" ").slice(1).join(" ")}</span>
             </h3>
             <p className="text-white/70 max-w-md text-pretty leading-relaxed">
-              Certified ICF life &amp; executive coach helping professionals and entrepreneurs 
-              transform their careers, relationships, and lives. Based in Austin, TX — coaching worldwide.
+              Certified ICF {siteConfig.tagline.toLowerCase()} helping professionals and entrepreneurs 
+              transform their careers, relationships, and lives. Based in {siteConfig.address.full} — coaching worldwide.
             </p>
           </div>
 
@@ -40,12 +41,12 @@ export default function Footer() {
                 </a>
               ))}
             </div>
-            <p className="text-sm text-white/50 mt-4">hello@elenatorres.com</p>
+            <p className="text-sm text-white/50 mt-4">{siteConfig.email}</p>
           </div>
         </div>
 
         <div className="border-t border-white/10 mt-12 pt-8 text-center text-sm text-white/40">
-          © {new Date().getFullYear()} Elena Torres Coaching. All rights reserved.
+          © {new Date().getFullYear()} {siteConfig.businessName} Coaching. All rights reserved.
         </div>
       </div>
     </footer>
