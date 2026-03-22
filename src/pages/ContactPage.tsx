@@ -1,12 +1,15 @@
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Instagram, Linkedin, Youtube, Mail, Podcast } from "lucide-react";
+import { siteConfig } from "@/lib/config";
+import SeoHead from "@/components/SeoHead";
 
 export default function ContactPage() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
     <>
+      <SeoHead page="contact" />
       <section className="py-24 gradient-hero text-white">
         <div className="container text-center">
           <h1 className="text-4xl md:text-5xl font-heading font-extrabold mb-4 text-balance">
@@ -85,14 +88,14 @@ export default function ContactPage() {
                 <h3 className="font-heading font-semibold mb-4">Connect With Me</h3>
                 <div className="flex gap-3">
                   {[
-                    { icon: Instagram, label: "Instagram" },
-                    { icon: Linkedin, label: "LinkedIn" },
-                    { icon: Youtube, label: "YouTube" },
-                    { icon: Podcast, label: "Podcast" },
-                  ].map(({ icon: Icon, label }) => (
+                    { icon: Instagram, label: "Instagram", url: siteConfig.socialLinks.instagram },
+                    { icon: Linkedin, label: "LinkedIn", url: siteConfig.socialLinks.linkedin },
+                    { icon: Youtube, label: "YouTube", url: siteConfig.socialLinks.youtube },
+                    { icon: Podcast, label: "Podcast", url: siteConfig.socialLinks.podcast },
+                  ].map(({ icon: Icon, label, url }) => (
                     <a
                       key={label}
-                      href="#"
+                      href={url}
                       className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center text-primary hover:bg-primary hover:text-primary-foreground transition-all"
                       title={label}
                     >
@@ -100,6 +103,9 @@ export default function ContactPage() {
                     </a>
                   ))}
                 </div>
+                {siteConfig.email && (
+                  <p className="text-sm text-muted-foreground mt-4">{siteConfig.email}</p>
+                )}
               </div>
             </div>
           </div>

@@ -1,0 +1,152 @@
+{
+  "businessName": "Elena Torres",
+  "tagline": "Life & Executive Coach",
+  "phone": "",
+  "email": "hello@elenatorres.com",
+  "address": {
+    "city": "Austin",
+    "state": "TX",
+    "full": "Austin, TX"
+  },
+  "serviceArea": "Austin & Worldwide (Virtual)",
+  "industry": "Life & Executive Coaching",
+  "yearEstablished": "2014",
+  "certifications": ["ICF PCC Certified", "NLP Practitioner", "Positive Intelligence", "Somatic Coaching"],
+  "about": "I'm Elena Torres — a certified ICF PCC life and executive coach based in Austin, Texas. For over 12 years, I've helped 500+ professionals, entrepreneurs, and change-makers unlock clarity, confidence, and the courage to create lives they truly love.",
+  "story": [
+    "Fifteen years ago, I was a senior VP at a Fortune 500 company. On paper, I had everything — the title, the corner office, the salary. But every Sunday night, I felt a knot in my stomach that told me something was deeply wrong.",
+    "My wake-up call came during a hospital visit for burnout-induced health issues. That's when I realized: success without fulfillment isn't success at all. I hired my own coach, did the deep work, and within a year, I'd completely transformed my life.",
+    "That transformation was so profound that I knew I had to help others experience the same. I invested in world-class training, earned my ICF PCC certification, studied NLP and somatic coaching, and haven't looked back since."
+  ],
+  "stats": [
+    { "value": "500+", "label": "Clients Transformed" },
+    { "value": "12", "label": "Years Coaching" },
+    { "value": "ICF PCC", "label": "Certified Coach" },
+    { "value": "98%", "label": "Client Satisfaction" }
+  ],
+  "personas": [
+    {
+      "title": "Professionals Feeling Stuck",
+      "desc": "You've achieved success on paper, but something feels off. You're craving purpose, direction, and that spark you once had.",
+      "cta": "That's Me"
+    },
+    {
+      "title": "Entrepreneurs Scaling Up",
+      "desc": "You're building something meaningful but overwhelmed by decisions. You need clarity, strategy, and someone who gets it.",
+      "cta": "That's Me"
+    },
+    {
+      "title": "Anyone Ready for Change",
+      "desc": "You know there's more to life. You're done waiting and ready to take bold action toward the version of yourself you know you can be.",
+      "cta": "That's Me"
+    }
+  ],
+  "transformations": [
+    { "from": "Overwhelmed", "to": "Focused & Clear" },
+    { "from": "Stuck in Place", "to": "Moving Forward" },
+    { "from": "Self-Doubt", "to": "Unshakeable Confidence" },
+    { "from": "Burnt Out", "to": "Energized & Aligned" }
+  ],
+  "services": [
+    {
+      "name": "1-on-1 Coaching",
+      "price": "$297/month",
+      "priceShort": "$297/mo",
+      "duration": "3–6 month commitment",
+      "desc": "Deep, personalized transformation with dedicated attention and support.",
+      "who": "Professionals & entrepreneurs ready for accelerated growth",
+      "includes": ["Weekly 60-minute sessions", "Unlimited voice/text support between sessions", "Custom action plans & frameworks", "Progress tracking dashboard", "Priority scheduling"],
+      "highlight": false,
+      "iconType": "crown"
+    },
+    {
+      "name": "VIP Intensive Day",
+      "price": "$2,500",
+      "priceShort": "$2,500",
+      "duration": "One day + 90-day follow-up",
+      "desc": "A full day of deep-dive coaching to create your 90-day breakthrough roadmap.",
+      "who": "Leaders needing clarity on a major decision or transition",
+      "includes": ["8-hour intensive session", "Pre-session assessment & prep", "Custom 90-day action roadmap", "2 follow-up coaching calls", "Lifetime priority access"],
+      "highlight": true,
+      "iconType": "zap"
+    },
+    {
+      "name": "Group Coaching",
+      "price": "$149/month",
+      "priceShort": "$149/mo",
+      "duration": "12-week cohort program",
+      "desc": "The power of community coaching with peer accountability and shared growth.",
+      "who": "Anyone wanting coaching at an accessible investment",
+      "includes": ["Weekly 90-min group sessions", "Private online community", "Peer accountability pods", "Recorded workshops library", "Monthly 1-on-1 check-in"],
+      "highlight": false,
+      "iconType": "users"
+    }
+  ],
+  "corporateDesc": "I work with forward-thinking organizations to develop their leaders, improve team dynamics, and create cultures of high performance and well-being. Available as workshops, retreats, or ongoing team coaching engagements.",
+  "testimonials": [
+    { "quote": "Elena completely changed my trajectory. I went from dreading Monday mornings to running a business I'm passionate about. Her ability to see your potential when you can't is a gift.", "name": "Sarah Mitchell", "title": "Founder, Bloom Creative", "result": "Left corporate & launched her dream business" },
+    { "quote": "I was skeptical about coaching, but within three months I had more clarity about my career than I'd gained in ten years. The investment paid for itself tenfold.", "name": "Marcus Chen", "title": "VP of Engineering, TechScale", "result": "Promoted twice in 18 months" },
+    { "quote": "Working with Elena gave me the confidence to charge what I'm worth and set boundaries that transformed not just my business, but my relationships and health too.", "name": "Priya Desai", "title": "Executive Coach & Consultant", "result": "Doubled her income in one year" },
+    { "quote": "I came to Elena feeling completely burnt out. Six months later, I'm running my team with more energy than I've had in years and my health is back on track.", "name": "James Walker", "title": "Director of Operations, Meridian Group", "result": "Overcame burnout, got promoted" },
+    { "quote": "The group coaching program was exactly what I needed. The community support combined with Elena's expertise created real momentum.", "name": "Aisha Okonkwo", "title": "Freelance Designer", "result": "Tripled her client base" },
+    { "quote": "Elena helped me find the courage to leave a 15-year career and start something truly aligned with my values. Best decision I ever made.", "name": "David Rousseau", "title": "Founder, GreenPath Consulting", "result": "Successful career pivot at 42" }
+  ],
+  "blogPosts": [
+    { "title": "The 5 Mindset Shifts That Changed Everything for My Clients", "category": "Mindset", "date": "Mar 12, 2026", "excerpt": "After coaching 500+ clients, these are the five internal shifts that consistently lead to breakthrough results." },
+    { "title": "Why High-Achievers Struggle with Fulfillment (And What to Do About It)", "category": "Career", "date": "Mar 5, 2026", "excerpt": "You've checked every box society told you to check. So why does success feel so empty?" },
+    { "title": "How to Set Boundaries Without Burning Bridges", "category": "Relationships", "date": "Feb 26, 2026", "excerpt": "The art of saying no without guilt — and why it's the most transformative skill you can develop." },
+    { "title": "The Morning Routine That Actually Works (Backed by Science)", "category": "Productivity", "date": "Feb 18, 2026", "excerpt": "Forget the 4 AM wake-ups and cold plunges. Here's what actually moves the needle." },
+    { "title": "Imposter Syndrome Is Lying to You: Here's the Proof", "category": "Mindset", "date": "Feb 10, 2026", "excerpt": "That voice telling you you're not good enough? It's using outdated data. Let's update the algorithm." },
+    { "title": "From Corporate Burnout to Purposeful Work: A Client's Story", "category": "Career", "date": "Feb 3, 2026", "excerpt": "How one VP traded her corner office for a life that lights her up — and made more money doing it." }
+  ],
+  "podcasts": [
+    { "title": "Ep. 47: The Art of Letting Go", "duration": "42 min", "date": "Mar 10, 2026" },
+    { "title": "Ep. 46: Money Mindset Masterclass", "duration": "38 min", "date": "Mar 3, 2026" },
+    { "title": "Ep. 45: Interview with Dr. Sarah Chen on Positive Intelligence", "duration": "55 min", "date": "Feb 24, 2026" }
+  ],
+  "blogCategories": ["All", "Mindset", "Career", "Relationships", "Productivity"],
+  "podcastName": "The Breakthrough Podcast",
+  "freeResource": {
+    "title": "5 Steps to Breakthrough Clarity",
+    "desc": "Get the exact framework I use with my private clients to cut through confusion and create unstoppable momentum."
+  },
+  "socialLinks": {
+    "instagram": "#",
+    "linkedin": "#",
+    "youtube": "#",
+    "podcast": "#"
+  },
+  "speakingBio": "I've spoken at TEDx, Fortune 500 leadership summits, and industry conferences worldwide. My work has been featured in Forbes, Entrepreneur Magazine, and the Mindful Leadership Podcast.",
+  "branding": {
+    "primaryColor": "263 84% 58%",
+    "secondaryColor": "244 60% 20%",
+    "accentColor": "45 96% 56%"
+  },
+  "seo": {
+    "home": {
+      "title": "Elena Torres | Life & Executive Coach in Austin",
+      "description": "Certified life coach helping professionals and entrepreneurs transform their careers and lives. Free discovery call. Austin & virtual coaching available.",
+      "h1": "Transform Your Life, Starting Today."
+    },
+    "about": {
+      "title": "About Elena Torres | Life & Executive Coach in Austin, TX",
+      "description": "Learn about Elena Torres — ICF PCC certified life and executive coach with 12+ years helping 500+ clients transform their careers and lives."
+    },
+    "services": {
+      "title": "Coaching Programs & Services | Elena Torres",
+      "description": "1-on-1 coaching, VIP intensives, group programs, and corporate coaching. Find the right coaching experience for your goals."
+    },
+    "testimonials": {
+      "title": "Client Success Stories | Elena Torres Coaching",
+      "description": "Real transformations from real people. Read how clients have changed their careers, businesses, and lives through coaching."
+    },
+    "blog": {
+      "title": "Blog & Podcast | Elena Torres Coaching",
+      "description": "Insights, strategies, and stories to fuel your personal and professional growth from certified life coach Elena Torres."
+    },
+    "contact": {
+      "title": "Contact Elena Torres | Book a Free Discovery Call",
+      "description": "Book a free 30-minute discovery call with Elena Torres. Let's talk about where you are, where you want to be, and how coaching can help."
+    }
+  }
+}
