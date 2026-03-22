@@ -2,7 +2,7 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight, Check, Sparkles, Users, Zap, Crown } from "lucide-react";
-import { siteConfig, getImage } from "@/lib/config";
+import { siteConfig, getImage, slugify } from "@/lib/config";
 import coachingSession from "@/assets/coaching-session.jpg";
 import SeoHead from "@/components/SeoHead";
 
