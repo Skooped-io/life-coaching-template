@@ -50,9 +50,14 @@ export default function ServicesPage() {
                     <p className="text-sm font-medium text-muted-foreground mb-6">
                       <strong className="text-foreground">Best for:</strong> {s.who}
                     </p>
-                    <Button variant="gold" asChild>
-                      <Link to="/contact">Apply Now <ArrowRight size={16} /></Link>
-                    </Button>
+                    <div className="flex flex-wrap gap-3">
+                      <Button variant="gold" asChild>
+                        <Link to={`/services/${slugify(s.name)}`}>Learn More <ArrowRight size={16} /></Link>
+                      </Button>
+                      <Button variant="outline" asChild>
+                        <Link to="/contact">Apply Now</Link>
+                      </Button>
+                    </div>
                   </div>
                   <div>
                     <h3 className="font-heading font-semibold mb-4">What's Included</h3>
