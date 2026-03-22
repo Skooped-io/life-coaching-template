@@ -19,3 +19,7 @@ export async function loadDynamicConfig() {
 export function getImage(dynamicConfig: any, slot: string, fallback: string): string {
   return dynamicConfig?.images?.[slot]?.url || fallback;
 }
+
+export function slugify(text: string): string {
+  return text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+}
